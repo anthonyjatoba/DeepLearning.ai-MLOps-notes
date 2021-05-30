@@ -114,4 +114,36 @@ Adding/improving data for a specific category:
 
 ### Skewed datasets
 
-### Performannce auditing
+Data sets where the ratio of positive to negative examples is very far from 50-50.
+
+**Manufacturing**: 99.7% no defect, 0.3% defect
+**Medical diagnosis**: 99% of patients don't have the disease
+**Speech recognition**: in wake word detection (e.g. ok google), 96,7% of the time wake word doesn't occur
+
+**Raw accuracy is not a useful metric.**
+
+#### Confusion matrix
+
+![confusion_matrix](figures/course1/week2/confusion_matrix.png)
+
+What happens with print('0')?
+
+![only 0](figures/course1/week2/confusion_matrix_only_0.png)
+
+We get 0% precision and 0% recall
+
+#### F1-score: combines precision and recall
+
+F1-score is a way of combining precision and recall that emphasizes whichever precision or recall is worse (harmonic mean).
+
+![only 0](figures/course1/week2/f1score.png)
+
+
+#### Multi-class metrics
+
+In multiclass problems, you can evaluate precision, recall, and F1-score for each class, allowing you to prioritize what to work on next.
+
+![multiclass metrics](figures/course1/week2/multiclass_metrics.png)
+
+### Performance auditing
+
