@@ -172,3 +172,136 @@ Even when you're learning algorithm is doing well on accuracy or F1-score is oft
 #### One last advice
 
 Rather than just one person try to brainstorm what may go wrong for high stakes applications you can have a team or external advisers help you brainstorm things you want to watch out for.
+
+## Data iteration
+
+### Data-centric AI development
+
+Let's say that era analysis has caused you to decide to focus on improving your outcome learning performance on data with a certain audio tag, say speech with car noise in the background.
+
+#### Model centric view
+
+Take the data you have, and develop a model that does as well as possible on it. Hold the data fixed and iteratively improve the code/model.
+
+#### Data-centric view
+
+The quality of the data is paramount. Use tools to improve the data quality; this will allow multiple models to do well. *Hold the code fixed and iteratively improve the data.*
+
+### A useful picture of data augmentation
+
+#### Speech recognition example
+
+Different types of speech input.
+
+![data augmentation picture](figures/course1/week2/data_augmentation_picture.png)
+
+By augmenting the data with cafe noise, one can pull up the performance on inputs on this type of noise. Pulling up one point cause nearby points to be pulled up more than far away points.
+
+### Data augmentation
+
+Data augmentation can be a very efficient way to get more data, especially for unstructured data problems such as images, audio, maybe text. 
+
+**Speech recognition example**: adding cafe or music noise to speech.
+
+**Goal:** create *realistic examples* that (i) the algorithm does poorly on, but (ii) humans (or other baseline) do well on.
+
+**Checklist:**
+- Does it sound realistic?
+- Is the x -> y clear (e.g. can human recognize speech?)
+- Is the algorithm currently doing poorly on it?
+
+**Image example:** flip picture, change contrast, photoshop scratches, GANs, darkening. *Note:* generating a image that is too dark may not be useful.
+
+**Data iteration loop:**
+
+![data iteration loop](figures/course1/week2/data_iteration.png)
+
+### Can adding data hurt?
+
+For a lot of machine learning problems, training sets and
+dev and test set distribution start at being similar. But, if you're using data augmentation, you're adding to specific parts of the training set such as adding lots of data with cafe noise. So now you're training set may come from a very different distribution than the dev set and the test set. 
+
+**Is this going to hurt your learning algorithm's performance?**
+
+For unstructured data, if:
+- The model is large (low bias)
+- The mapping x -> y is clear (humans can make accurate predictions)
+
+Then, **adding data rarely hurts accuracy.**
+
+**Photo OCR counterexample**
+
+![photo ocr counterexample](figures/course1/week2/photo_ocr_counterexample.png)
+
+Adding a lot of new "I"s may skew the dataset and hurt performance.
+
+### Adding features
+
+For many structure data problems, creating new training examples is difficult, but there's something else you could do which is to take existing training examples and figure out if there are additional useful features you can add to it.
+
+#### Structured data
+
+**Restaurant recommendation** example:
+
+Vegetarians are frequently recommended restaurants with only meat options.
+
+Possible features to add?
+- Is person vegetarian (based on past orders)?
+- Does this restaurant have vegetarian options (based on menu)?
+
+**Other food delivery examples:**
+- Users only order tea/coffee
+- Users only order pizza
+
+There's a trend in product recommendation switching from **collaborative filtering** (recommends things people like you also liked) to **content based filtering** (look at you and the restaurant to see if the restaurant is a good match. Content based filtering is useful, for instance, for recommending new restaurants that have no reviews. (cold start problem).
+
+#### Data iteration
+
+![data iteration features](figures/course1/week2/data_iteration_features.png)
+
+### Experiment tracking
+
+When you're running dozens or hundreds or maybe even more experiments, it's easy to forget what experiments you have already run. Having a system for tracking
+your experiments can help you be more efficient.
+
+What to track?
+
+- Algorithm/code versioning
+- Dataset used
+- Hyperparameters
+- Results (metrics or trained modelss)
+
+Tracking tools
+- Text files (for small environments)
+- Spreadsheet
+- Experiment tracking systems (Weight&Biases,Comet, MLflow,Sage Maker Studio)
+
+Desirable features
+- Information needed to replicate results
+- Experiment results with summary metrics/analysis
+- Perhaps also resource monitoring, model visualization,model error analysis
+
+### From big data to good data
+
+Try to ensure consistently high-quality data in all phases of the ML project lifecycle.
+- Covers important cases (x)
+- Is defined consistently (y is unambiguous)
+- Has timely feedback from production data
+- Is sized appropriately
+
+## Optional references
+
+[Establishing a baseline](https://blog.ml.cmu.edu/2020/08/31/3-baselines/)
+
+[Error analysis](https://techcommunity.microsoft.com/t5/azure-ai/responsible-machine-learning-with-error-analysis/ba-p/2141774)
+
+[Experiment tracking](https://neptune.ai/blog/ml-experiment-tracking)
+
+
+### Papers
+
+Konstantinos, Katsiapis, Karmarkar, A., Altay, A., Zaks, A., Polyzotis, N., … Li, Z. (2020). Towards ML Engineering: A brief history of TensorFlow Extended (TFX). http://arxiv.org/abs/2010.02013 
+
+Paleyes, A., Urma, R.-G., & Lawrence, N. D. (2020). Challenges in deploying machine learning: A survey of case studies. http://arxiv.org/abs/2011.09926
+
+Sculley, D., Holt, G., Golovin, D., Davydov, E., & Phillips, T. (n.d.). Hidden technical debt in machine learning systems. Retrieved April 28, 2021, from Nips.c https://papers.nips.cc/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf
