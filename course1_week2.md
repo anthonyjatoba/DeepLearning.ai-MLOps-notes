@@ -147,3 +147,28 @@ In multiclass problems, you can evaluate precision, recall, and F1-score for eac
 
 ### Performance auditing
 
+Even when you're learning algorithm is doing well on accuracy or F1-score is often worth one last performance audit before you push it to production.
+
+#### Auditing framework
+
+1. Brainstorm the ways the system might go wrong
+    - Performance on subsets of data (ethnicity, gender)
+    - How common are certain errors (e.g., FP, FN)
+    - Performance on rare classes
+2. Establish metrics to assess the algorithm's performance on these issues on appropriate *slices of data*
+3. Get business/product owner buy-in
+
+#### Speech recognition example
+
+1. Brainstorm the ways the system might go wrong
+    - Accuracy on different genders and ethnicities
+    - Accuracy on different devices
+    - Prevalence of rude mis-transcriptions (e.g., GAN transcripted as *gun* or *gang*)
+2. Establish metrics to assess the algorithm's performance on these issues on appropriate *slices of data*
+    - Mean accuracy for different genders and mmajor accents
+    - Mean accuracy on different devices
+    - Check for prevalence of offensive words in the output
+
+#### One last advice
+
+Rather than just one person try to brainstorm what may go wrong for high stakes applications you can have a team or external advisers help you brainstorm things you want to watch out for.
