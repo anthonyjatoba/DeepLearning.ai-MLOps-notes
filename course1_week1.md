@@ -2,8 +2,6 @@
 
 ## Machine Learning Project Lifecycle
 
-## Machine Learning Project Lifecycle
-
 ### Steps of an ML Project
 
 ### Case study: speech recognition
