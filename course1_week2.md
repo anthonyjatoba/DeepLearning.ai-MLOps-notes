@@ -23,14 +23,14 @@ Challenges:
 - Performance on disproportionately important examples
     - Give a higher weight
 - Performance on key slices of the dataset
-    - **Loan approval:** make sure not to discriminate by etnicity, gender, location...
+    - **Loan approval:** make sure not to discriminate by ethnicity, gender, location...
     - **Product recommendations from retailers:** be careful to treat fairly all major user, retailer, and product categories.
 - Rare classes
-    - **Skewed data distributon:** accuracy in rare classes, e.g. medical diagnosis
+    - **Skewed data distribution:** accuracy in rare classes, e.g. medical diagnosis
 
 ### Establish a baseline
 
-#### HLP: Human level performance
+#### HLP: Human-level performance
 
 **Speech recognition:** 
 - Clear speech: 94% (95% HLP)
@@ -44,17 +44,17 @@ Focus on car noise background.
 
 Humans are better at unstructured data
 
-- **Unstructured data:** use HLP as baseline
-- **Structured data** (giant databases): HLP is less usefull
+- **Unstructured data:** use HLP as a baseline
+- **Structured data** (giant databases): HLP is less useful
 
-#### Ways to stablish a baseline
+#### Ways to establish a baseline
 
 - HLP
 - Literature
 - Quick-dirty-implementation
-- Performance of older system
+- Performance of an older system
 
-Baseline helps to indicate what might be possible. In some cases it also gives a sense of what is irreducible error.
+A baseline helps to indicate what might be possible. In some cases, it also gives a sense of what is an irreducible error.
 
 ### Tips for getting started
 
@@ -68,8 +68,8 @@ Baseline helps to indicate what might be possible. In some cases it also gives a
 #### Deployment constraints
 
 Should you take into account deployment constraints when picking a model? 
-- **Yes**,, if baseline is already established and goal is to build and deploy.
-- **No** (or not necessarily), if purpose is to *establish a baseline* and determine what is possible and might be worth pursuing.
+- **Yes**, if the baseline is already established and the goal is to build and deploy.
+- **No** (or not necessarily), if the purpose is to *establish a baseline* and determine what is possible and might be worth pursuing.
 
 #### Sanity-check for code and algorithm
 
@@ -79,11 +79,11 @@ Should you take into account deployment constraints when picking a model?
 
 ## Error analysis and performance auditing
 
-The heart of the machine learning development process as error analysis, which if you do it well, It can tell you what's the most efficient use of your time in terms of what you should do to improve your learning albums performance. 
+The heart of the machine learning development process is error analysis, which if you do it well, can tell you what's the most efficient use of your time in terms of what you should do to improve your learning albums performance. 
 
 ### Error analysis example
 
-**Speech recognition example:** evaluate if the misprediction has car noise or people noise in a spreadsheet. Maybe in the process you can come up with new columns. (manual process)
+**Speech recognition example:** evaluate if the misprediction has car noise or people noise in a spreadsheet. Maybe in the process, you can come up with new columns. (manual process)
 
 **Automatic process:** such as landing lens for visual applications.
 
@@ -99,12 +99,12 @@ The heart of the machine learning development process as error analysis, which i
 
 ![image1](figures/course1/week2/prioritizing.png)
 
-Prioritizing certain type may give better improvement in performance, e.g. improving clean speech and people noise recognition can improve the overall performance by 0.6% each.
+Prioritizing certain types may give a better improvement in performance, e.g. improving clean speech and people noise recognition can improve the overall performance by 0.6% each.
 
 Decide based on:
 - How much room for improvement there is
-- How frequently that category appearrs
-- How easy is to improve accuracy in that category (e.g. using data augmentation)
+- How frequently that category appears
+- How easy is it to improve accuracy in that category (e.g. using data augmentation)
 - How important it is to improve performance in that category
 
 Adding/improving data for a specific category:
@@ -154,7 +154,7 @@ Even when you're learning algorithm is doing well on accuracy or F1-score is oft
 1. Brainstorm the ways the system might go wrong
     - Performance on subsets of data (ethnicity, gender)
     - How common are certain errors (e.g., FP, FN)
-    - Performance on rare classes
+    - Performance in rare classes
 2. Establish metrics to assess the algorithm's performance on these issues on appropriate *slices of data*
 3. Get business/product owner buy-in
 
@@ -163,15 +163,15 @@ Even when you're learning algorithm is doing well on accuracy or F1-score is oft
 1. Brainstorm the ways the system might go wrong
     - Accuracy on different genders and ethnicities
     - Accuracy on different devices
-    - Prevalence of rude mis-transcriptions (e.g., GAN transcripted as *gun* or *gang*)
+    - Prevalence of rude mistranscriptions (e.g., GAN transcripted as *gun* or *gang*)
 2. Establish metrics to assess the algorithm's performance on these issues on appropriate *slices of data*
-    - Mean accuracy for different genders and mmajor accents
+    - Mean accuracy for different genders and major accents
     - Mean accuracy on different devices
-    - Check for prevalence of offensive words in the output
+    - Check for the prevalence of offensive words in the output
 
-#### One last advice
+#### One last piece of advice
 
-Rather than just one person try to brainstorm what may go wrong for high stakes applications you can have a team or external advisers help you brainstorm things you want to watch out for.
+Rather than just one person trying to brainstorm what may go wrong for high-stakes applications you can have a team or external advisers help you brainstorm things you want to watch out for.
 
 ## Data iteration
 
@@ -195,7 +195,7 @@ Different types of speech input.
 
 ![data augmentation picture](figures/course1/week2/data_augmentation_picture.png)
 
-By augmenting the data with cafe noise, one can pull up the performance on inputs on this type of noise. Pulling up one point cause nearby points to be pulled up more than far away points.
+By augmenting the data with cafe noise, one can pull up the performance on inputs on this type of noise. Pulling up one point causes nearby points to be pulled up more than far away points.
 
 ### Data augmentation
 
@@ -203,23 +203,23 @@ Data augmentation can be a very efficient way to get more data, especially for u
 
 **Speech recognition example**: adding cafe or music noise to speech.
 
-**Goal:** create *realistic examples* that (i) the algorithm does poorly on, but (ii) humans (or other baseline) do well on.
+**Goal:** create *realistic examples* that (i) the algorithm does poorly on, but (ii) humans (or another baseline) do well on.
 
 **Checklist:**
 - Does it sound realistic?
-- Is the x -> y clear (e.g. can human recognize speech?)
+- Is the x -> y clear (e.g. can humans recognize speech?)
 - Is the algorithm currently doing poorly on it?
 
-**Image example:** flip picture, change contrast, photoshop scratches, GANs, darkening. *Note:* generating a image that is too dark may not be useful.
+**Image example:** flip picture, change contrast, photoshop scratches, GANs, darkening. *Note:* generating an image that is too dark may not be useful.
 
 **Data iteration loop:**
 
 ![data iteration loop](figures/course1/week2/data_iteration.png)
 
-### Can adding data hurt?
+### Can add data hurt?
 
 For a lot of machine learning problems, training sets and
-dev and test set distribution start at being similar. But, if you're using data augmentation, you're adding to specific parts of the training set such as adding lots of data with cafe noise. So now you're training set may come from a very different distribution than the dev set and the test set. 
+dev and test set distribution to start at being similar. But, if you're using data augmentation, you're adding to specific parts of the training set such as adding lots of data with cafe noise. So now you're training set may come from a very different distribution than the dev set and the test set. 
 
 **Is this going to hurt your learning algorithm's performance?**
 
@@ -237,7 +237,7 @@ Adding a lot of new "I"s may skew the dataset and hurt performance.
 
 ### Adding features
 
-For many structure data problems, creating new training examples is difficult, but there's something else you could do which is to take existing training examples and figure out if there are additional useful features you can add to it.
+For many structure data problems, creating new training examples is difficult, but there's something else you could do which is to take existing training examples and figure out if there are additional useful features you can add to them.
 
 #### Structured data
 
@@ -246,14 +246,14 @@ For many structure data problems, creating new training examples is difficult, b
 Vegetarians are frequently recommended restaurants with only meat options.
 
 Possible features to add?
-- Is person vegetarian (based on past orders)?
-- Does this restaurant have vegetarian options (based on menu)?
+- Is a person vegetarian (based on past orders)?
+- Does this restaurant have vegetarian options (based on the menu)?
 
 **Other food delivery examples:**
 - Users only order tea/coffee
 - Users only order pizza
 
-There's a trend in product recommendation switching from **collaborative filtering** (recommends things people like you also liked) to **content based filtering** (look at you and the restaurant to see if the restaurant is a good match. Content based filtering is useful, for instance, for recommending new restaurants that have no reviews. (cold start problem).
+There's a trend in product recommendation switching from **collaborative filtering** (recommends things people like you also liked) to ** content-based filtering** (look at you and the restaurant to see if the restaurant is a good match. Content-based filtering is useful, for instance, for recommending new restaurants that have no reviews. (cold start problem).
 
 #### Data iteration
 
@@ -269,17 +269,17 @@ What to track?
 - Algorithm/code versioning
 - Dataset used
 - Hyperparameters
-- Results (metrics or trained modelss)
+- Results (metrics or trained models)
 
 Tracking tools
 - Text files (for small environments)
 - Spreadsheet
-- Experiment tracking systems (Weight&Biases,Comet, MLflow,Sage Maker Studio)
+- Experiment tracking systems (Weight&Biases, Comet, MLflow, Sage Maker Studio)
 
 Desirable features
 - Information needed to replicate results
 - Experiment results with summary metrics/analysis
-- Perhaps also resource monitoring, model visualization,model error analysis
+- Perhaps also resource monitoring, model visualization, model error analysis
 
 ### From big data to good data
 
