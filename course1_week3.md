@@ -54,4 +54,33 @@ Two ways to merge the data:
 
 ### Major types of data problems
 
+The best practices for organizing data for one type can be quite different than the best practices for totally different types.
+
+#### Major types of data problems
+
+ ![matrix data problems](figures/course1/week3/matrix_data_problems.png)
+
+Unstructured data vs. structured data
+
+- Unstructured data
+    - May or may not have huge collection of unlabeled examples x
+    - Humans can label more data
+    - Data augmentation more likely to be helpful
+- Structured data
+    - May be more difficult to obtain more data
+    - Human labeling may not be possible (with exceptions)
+
+Small data vs. big data
+
+- Small data
+    - Clean labels arer critical
+    - Can manually look through dataset and fix labels
+    - Can get all the lbelers to talk to each other
+- Big data
+    - Emphasis on data process
+
 ### Small data and label consistency
+
+### Improving label consistency
+
+### Human level performance (HLP)
