@@ -16,14 +16,14 @@
 
 ### Pipeline monitoring
 
-Many AI systems are not just a single machine learning model running a prediction service, but instead involves a  pipeline of multiple steps. Changes on one step may affect the next steps.
+Many AI systems are not just a single machine learning model running a prediction service, but instead involves a  pipeline of multiple steps. Changes in one step may affect the next steps.
 
 Metrics to monitor:
 * Software metrics
 * Input metrics
 * Output metrics
 
-**How quickly data change?** some applications have data that changes quickly. User data generally has a slower drift. Enterprise data (B2B) can shift fast.
+**How quickly data change?** Some applications have data that changes quickly. User data generally has a slower drift. Enterprise data (B2B) can shift fast.
 
 ### Optional references
 
