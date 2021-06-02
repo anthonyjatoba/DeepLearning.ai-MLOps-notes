@@ -81,6 +81,27 @@ Small data vs. big data
 
 ### Small data and label consistency
 
+In problems of a small dataset, having clean and consistent labels is especially important. 
+
+![small data vs big data](figures/course1/week3/small_data_big_data.png)
+
+When you have a small dataset, five examples and noisy label, it is hard to fit a function confidently. Now, if you have a ton of data, equally noisy as the small data, the learning algorithm can fit a function pretty confidently.
+
+What if you have a small dataset, but clean and consistent labels? In this case, you can confidently fit a function.
+
+#### Phone defect example
+
+When labels are not consisteny, it may be fruitful to ask inspectors to reach an agreement. If the inspectors agree that the point of transition is a length of 0.3mm, it becomes easier to the learning algorithm to consistenly decide if something is a scratch.
+
+![defect agreement](figures/course1/week3/defect_agreement.png)
+
+#### Big data problems can have small data challenges too
+
+Problems with a large dataset but where there is a *long tail* of rare events in the input will have small data challenges too.
+- Web search (small data of rare queries)
+- Self-driving cars (small data of rare occurrences)
+- Product recommendation systems (small data of interactions with less popular products)
+
 ### Improving label consistency
 
 ### Human level performance (HLP)
