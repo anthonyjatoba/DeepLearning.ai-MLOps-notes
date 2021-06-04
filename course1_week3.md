@@ -104,4 +104,52 @@ Problems with a large dataset but where there is a *long tail* of rare events in
 
 ### Improving label consistency
 
+- Have multiple labelers label same example.
+- When there is disagreement, have MLE, subject matter expert (SME) and/or labelers discuss definition of _y_ to reach agreement (document that agreement and instructions).
+- If labelers believe that x doesn't contain enough information, consider changing x.
+- Iterate until it is hard to significantly increase agreement.
+
+#### Standardize labels
+
+Standardize:
+- "Um, nearest gas station"
+- "Umm, nearest gas station"
+- "Nearest gas station"
+
+into 
+- "Um, nearest gas station"
+
+#### Merge classes
+
+![merge scratch](figures/course1/week3/merge_scratch.png)
+
+If the definition of what is a deep or shallow scratch is unclear, merge the classes into a single scratch class. 
+
+#### Have a class/label to capture uncertainty
+
+Supose you ask labelers to label phones as defective or not based on the length of a scratch.
+
+![merge scratch](figures/course1/week3/scratch_length.png)
+
+Reaching an agreement is a way to reduce label ambiguity. If that turns out difficult, another option is to create a new class, acknowledging if an example is ambiguous.
+
+- **Defect:** 0, 1 or borderline
+
+If it is possible to create consistent instructions for this three class problem, that could improve label consistency.
+
+Another example is an audio with lots of noise, where it may be better to reach an agreement to label part of the text as [uninteligible].
+
+#### Small data vs. big data (unstructured data)
+
+Small data
+- Usually small number of labelers
+- You can ask labelers do discuss specific labels
+
+Big data
+- Get to consistent definition with a small group
+- Then sending labeling instructions to labelers
+- Consider using voting to reach a consensus between multiple labelers
+
+In the current machine leaning scenario, there is a lack of tools for assisting labeling and label consistency between a team.
+
 ### Human level performance (HLP)
