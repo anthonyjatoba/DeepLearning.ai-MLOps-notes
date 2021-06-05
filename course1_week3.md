@@ -215,3 +215,42 @@ Some exceptions:
 - Is the transaction fraudulent?
 - Spam account? Bot?
 - From GPS, what is the mode of transportation?
+
+## Label and Organize Data
+
+### Obtaining data
+
+#### How long should you spend obtaining data?
+
+- Get into the ML iteration loop as quickly as possible.
+- **Instead of asking:** how long it would take to obtain m examples? **Ask:** how much data can we obtain in *k* days?
+- **Exception:** if you have worked on the problem before and you know from experience you need *m* examples.
+
+If you don't know how much data you need, is better to quickly collect a small amount of data, train a model and use error analysis to tell you if is worth to collect more data.
+
+#### Inventory data
+
+Brainstorm list of data sources (speech recognition transcription).
+
+| Source                  | Amount | Cost   | Time    |
+| -----------------------:|:------:| ------:| -------:|
+| Owned                   | 100h   | $0     | 0       |
+| Crowdsourced (reading)  | 1000h  | $10000 | 14 days | 
+| Pay for labels          | 100h   | $6000  | 7 days  |
+| Purchase data           | 100h   | $6000  | 1 day   |
+
+Use the table to choose wich data you will use based on the data amount, cost, and time constraints. **Other factors:** data quality, privacy and regulatory constraints.
+
+#### Labeling data
+
+- **Options:** in-house vs. outsourced vs. crowdsourced.
+- Having MLE label data is expensive. But doin this for just a few days is usually fine.
+- Who is qualified to label?
+    - **Speech recognition:** any reasonably fluent speaker.
+    - **Factory inspection, medical image diagnosis:** subject matter expert (SME).
+    - **Recommender systems:** maybe impossible to label well.
+- Don't increase data by more than 10x at a time, as it can make harder to predict how your model will behave. 
+
+### Data pipeline
+### Meta-data, data provenance and lineage
+### Balanced train/dev/test splits
