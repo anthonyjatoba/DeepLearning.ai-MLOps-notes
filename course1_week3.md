@@ -153,3 +153,36 @@ Big data
 In the current machine leaning scenario, there is a lack of tools for assisting labeling and label consistency between a team.
 
 ### Human level performance (HLP)
+
+Some machine learning tasks consists of predicting an inherently ambiguous output, and human level performance (HLP) can establish a useful baseline of performance. But HLP is sometimes misuse.
+
+#### Why measure MLP
+
+Estimate bayes error/irreducible error to help with error analysis and prioritization.
+
+![hlp](figures/course1/week3/hlp.png)
+
+If the ground truth label was written by another human, are we measuring what is possible or how well two people agree to each other? When the ground truth label is written by a person, there's a different approach to thinking about HLP.
+
+#### Other uses of HLP
+
+- In academia, establish and beat a respectable benchmark to supportr publication.
+- Product owner asks for 99% accuracy. HLP helps establish a more reasonable target.
+- "Prove" the ML system is superior to humans doing the job and thus the business or product owner should adopt it (**use with caution**).
+
+#### The problem with beating HLP as a "proof" of ML "superiority"
+
+- **Label 1:** "Um... nearest gas station" (70% of labelers)
+- **Label 2:** "Um, nearest gas station" (30% of labelers)
+
+`Two random labelers agree: 0.7² + 0.3² = 0.58`
+
+In the usual way of measuring HLP, you would conclude that HLP is 0.58, but what you're really measuring is the chance of two labelers agree.
+
+This is where the learning algorithm has an unfair advantage. The algorithm is better at gathering statistics of how often commas or ellipses are used in transcriptions
+
+`ML agrees with humans: 0.70`
+
+The 12% performance boost is not important for anything and can mask more significant errors may be making.
+
+### Raising HLP
