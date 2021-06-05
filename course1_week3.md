@@ -186,3 +186,32 @@ This is where the learning algorithm has an unfair advantage. The algorithm is b
 The 12% performance boost is not important for anything and can mask more significant errors may be making.
 
 ### Raising HLP
+
+When the ground truth is externally defined, HLP gives an estimate for bayes errror / irreducible error.
+
+But often, ground thruth is just another human label.
+
+Example: AI to diagnose from X-ray images. If the diagnosis is given by a biopsys, HLP helps you measure how well a doctor vs learning algorithm predicts the outcome of a biopsy. (useful case)
+
+When the diagnosis is given by a human, HLP measures how well a doctor or learning algorirthm predicts another doctor's label. It may be useful.
+
+#### Raising HLP
+
+By reaching an agreement on which scratch length represents a defect, we can raise HLP from 66.7% to 100%.
+
+![raising hlp](figures/course1/week3/raising_hlp.png)
+
+- When the label y comes from a human label, HLP < 100% may indicate ambiguous labeling intructions.
+- Improving label consistency will raise HLP.
+- This makes it harder for the ML to beat HLP. But the more consistent labels will raise ML performance, which is ultimately likely to benefit the actual application performance
+
+#### HLP on structured data
+
+Structured data problems are less likely to involve human labelers, thus HLP is less frequently used.
+
+Some exceptions:
+- User ID merging: same person?
+- Based on network traffic, is the computer hacked?
+- Is the transaction fraudulent?
+- Spam account? Bot?
+- From GPS, what is the mode of transportation?
