@@ -388,4 +388,41 @@ The progress of a model's performance over time can give a idea of what may be r
 
 ### Diligence on value
 
-### Milestones and ressourcing
+There is a gap between MLE metrics and Businesss metrics.
+
+![project gap](figures/course1/week3/metrics_gap.png)
+
+Have technical and business teams try to agrere on metrics that both are comfortable with.
+
+It can be useful to give a rough guess for the improvement in the latter metrics if you can improve the word-level accuracy - [Fermi estimate](https://en.wikipedia.org/wiki/Fermi_problem).
+
+#### Ethical considerations
+
+- Is this project creating net positive societal value?
+- Is this project reasonably fair and free of bias?
+- Have any ethical concerns been openly aired and debated?
+
+### Milestones and resourcing
+
+Key specifications:
+- ML metrics (accuracy, precision/recall, ,etc.)
+- Software metrics (latency, throghput, etc. given computer resources)
+- Busines metrics (revenue, etc.)
+- Resources needed (data, personnel, help from other teams)
+- Timeline
+
+If unsure, consider benchmarking to other projects, or rbuiilding a POC (Proof of Concept) first.
+
+## Optional references
+
+[Label ambiguity](https://csgaobb.github.io/Projects/DLDL.html)
+
+[Data pipelines](https://cs230.stanford.edu/blog/datapipeline/#best-practices)
+
+[Data lineage](https://blog.tensorflow.org/2021/01/ml-metadata-version-control-for-ml.html)
+
+[MLops](https://cloud.google.com/blog/products/ai-machine-learning/key-requirements-for-an-mlops-foundation)
+
+### Papers
+
+Geirhos, R., Janssen, D. H. J., Schutt, H. H., Rauber, J., Bethge, M., & Wichmann, F. A. (n.d.). Comparing deep neural networks against humans: object recognition when the signal gets weaker∗. Retrieved May 7, 2021, from Arxiv.org website: https://arxiv.org/pdf/1706.06969.pdf
