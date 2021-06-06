@@ -9,13 +9,13 @@
 - Scoping: in which you have to define the project or decide what to work on. What exactly do you want to apply Machine Learning to, and what is X and what is Y.
 - Data:
     - Defining the data and establishing a baseline.
-    - Label and  organize data.
+    - Label and organize data.
 - Modeling:
-    - Select and train model.
+    - Select and train the model.
     - Perform error analysis.
 - Deployment:
-    - Deploy in poduction.
-    - Monitor and maintain system.
+    - Deploy in production.
+    - Monitor and maintain the system.
 
 ### Case study: speech recognition
 
@@ -29,7 +29,7 @@
 #### Data stage
 
 Define data:
-- Is the data labeled consistenly?
+- Is the data labeled consistently?
 - How much silence before/after each clip?
 - How to perform volume normalization?
 
@@ -38,11 +38,11 @@ Define data:
 ![modeling stage](figures/course1/week1/modeling_stage.png)
 
 - In research/academia work, you tend to keep the data fixed and vary the code and hyperparameters.
-- in product teams, it can be more efective to keep the code fixed and vary the data
+- in product teams, it can be more effective to keep the code fixed and vary the data
 
 #### Deployment stage
 
-Example of an architecture for speech recognition product.
+Example of architecture for speech recognition product.
 
 ![deployment stage](figures/course1/week1/deployment_stage.png)
  
@@ -56,7 +56,7 @@ After deploying, you still need to monitor the model.
 
 #### Concept drift and Data drift
 
-What if your data changes after your system has already been deployed? 
+What if your data changes after your system have already been deployed? 
 
 *Data drift* is used to describe if the input (X) distribution has changed. *Concept drift* is used to describe if the mapping (X->y) has changed.
 
@@ -75,7 +75,7 @@ How has the data changed?
 #### Software engineering issues
 
 Checklist:
-- Realtime or batch prediction?
+- Real-time or batch prediction?
 - Cloud vs. Edge
 - Computer resources (CPU, GPU, memory)
 - Latency, throughput (QPS)
@@ -88,7 +88,7 @@ Checklist:
 
 1. New product/capability
 2. Automate/assist with manual task
-3. Replace previous ML system
+3. Replace the previous ML system
 
 Key ideas:
 - Gradual ramp up with monitoring
@@ -106,14 +106,14 @@ ML system's output not used for any decision during this phase
 
 ![canary deployment](figures/course1/week1/canary_deployment.png)
 
-- Roll out to small fraction (say 5%) of traffic initially.
+- Roll out to a small fraction (say 5%) of traffic initially.
 - Monitor system and ramp up traffic gradually.
 
 #### Blue green deployment
 
 ![Blue green deployment](figures/course1/week1/blue_green_deployment.png)
 
-Blue (old prediction service), green (new prediction service) and the router switch the traffic from the old to the new one.
+Blue (old prediction service), green (new prediction service), and the router switch the traffic from the old to the new one.
 
 - Easy way to enable rollback
 
@@ -151,11 +151,11 @@ You can choose to stop before getting to full automation.
     - Number of times user redoes search
     - Number of times user switches to typing (voice recognition)
 
-#### Just as ML modeling is iterative, so is deployment
+#### Just as ML modeling is iterative, so is the deployment
 
 ![deployment_cycle](figures/course1/week1/deployment_cycle.png)
 
-Iterative process to choose the right set of metrics to monitor.
+An iterative process to choose the right set of metrics to monitor.
 
 #### Monitoring dahboard
 
@@ -166,7 +166,7 @@ Iterative process to choose the right set of metrics to monitor.
 
 #### Model maintenance
 
-- **Manual retraining:** an engineer train a new model, performs error analysis and pushes it to deployment.
+- **Manual retraining:** an engineering train a new model, performs error analysis, and pushes it to deployment.
 - **Automatic retraining** 
 
 ### Pipeline monitoring
