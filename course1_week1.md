@@ -1,6 +1,6 @@
-# Week 1: Overview of the ML Lifecycle and DeploymentThe 
+# Week 1: Overview of the ML Lifecycle and Deployment 
 
-## Machine Learning Project Lifecycle
+## The Machine Learning Project Lifecycle
 
 ### Steps of an ML Project
 
@@ -84,7 +84,90 @@ Checklist:
 
 ### Deployment patterns
 
+#### Common deployment cases
+
+1. New product/capability
+2. Automate/assist with manual task
+3. Replace previous ML system
+
+Key ideas:
+- Gradual ramp up with monitoring
+- Rollback
+
+#### Visual inspection example - Shadow Mode pattern
+
+![shadow mode](figures/course1/week1/shadow_mode.png)
+
+ML system shadows the human and runs in parallel.
+
+ML system's output not used for any decision during this phase
+
+#### Canary deployment
+
+![canary deployment](figures/course1/week1/canary_deployment.png)
+
+- Roll out to small fraction (say 5%) of traffic initially.
+- Monitor system and ramp up traffic gradually.
+
+#### Blue green deployment
+
+![Blue green deployment](figures/course1/week1/blue_green_deployment.png)
+
+Blue (old prediction service), green (new prediction service) and the router switch the traffic from the old to the new one.
+
+- Easy way to enable rollback
+
+#### Degrees of automation
+
+![degrees of automation](figures/course1/week1/degrees.png)
+
+You can choose to stop before getting to full automation.
+
 ### Monitoring
+
+#### Monitoring dahboard
+
+![monitoring dashboard](figures/course1/week1/dashboard.png)
+
+- Brainstorm the things that could go wrong.
+- Brainstorm a few statistics/metrics that will detect the problem.
+- It is ok to use many metrics initially and gradually remove the ones you find not useful.
+
+#### Examples of metrics to track
+
+- Software metrics:
+    - Memory
+    - CPU
+    - Latency
+    - Throughput
+    - Server load
+- Input metrics
+    - Average input length
+    - Average input volume
+    - Number of missing values
+    - Average image brightness
+- Output metrics
+    - Number of times it returns null
+    - Number of times user redoes search
+    - Number of times user switches to typing (voice recognition)
+
+#### Just as ML modeling is iterative, so is deployment
+
+![deployment_cycle](figures/course1/week1/deployment_cycle.png)
+
+Iterative process to choose the right set of metrics to monitor.
+
+#### Monitoring dahboard
+
+![deployment_cycle](figures/course1/week1/dashboard2.png)
+
+- Set thresholds for alarms
+- Adapt metrics and thresholds over time
+
+#### Model maintenance
+
+- **Manual retraining:** an engineer train a new model, performs error analysis and pushes it to deployment.
+- **Automatic retraining** 
 
 ### Pipeline monitoring
 
