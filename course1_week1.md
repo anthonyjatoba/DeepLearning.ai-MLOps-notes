@@ -4,11 +4,83 @@
 
 ### Steps of an ML Project
 
+![project_lifecycle](figures/course1/week1/ml_project-lifecycle.png)
+
+- Scoping: in which you have to define the project or decide what to work on. What exactly do you want to apply Machine Learning to, and what is X and what is Y.
+- Data:
+    - Defining the data and establishing a baseline.
+    - Label and  organize data.
+- Modeling:
+    - Select and train model.
+    - Perform error analysis.
+- Deployment:
+    - Deploy in poduction.
+    - Monitor and maintain system.
+
 ### Case study: speech recognition
+
+#### Scoping stage
+
+- Decide to work on speech recognition for voice search
+- Decide on key metrics:
+    - Accuracy, latency, throughput...
+- Estimate resources and timeline.
+
+#### Data stage
+
+Define data:
+- Is the data labeled consistenly?
+- How much silence before/after each clip?
+- How to perform volume normalization?
+
+#### Modeling
+
+![modeling stage](figures/course1/week1/modeling_stage.png)
+
+- In research/academia work, you tend to keep the data fixed and vary the code and hyperparameters.
+- in product teams, it can be more efective to keep the code fixed and vary the data
+
+#### Deployment stage
+
+Example of an architecture for speech recognition product.
+
+![deployment stage](figures/course1/week1/deployment_stage.png)
+ 
+After deploying, you still need to monitor the model.
+- Concept drift
+- Data drift
 
 ## Deployment
 
 ### Key challenges
+
+#### Concept drift and Data drift
+
+What if your data changes after your system has already been deployed? 
+
+*Data drift* is used to describe if the input (X) distribution has changed. *Concept drift* is used to describe if the mapping (X->y) has changed.
+
+**Speech recognition example:**
+
+Training set:
+- Purchased data, historical user data with transcripts.
+
+Test set:
+- Data from a few months ago.
+
+How has the data changed?
+- Gradual change: language change
+- Sudden shock: COVID-19
+
+#### Software engineering issues
+
+Checklist:
+- Realtime or batch prediction?
+- Cloud vs. Edge
+- Computer resources (CPU, GPU, memory)
+- Latency, throughput (QPS)
+- Logging
+- Security and privacy 
 
 ### Deployment patterns
 
