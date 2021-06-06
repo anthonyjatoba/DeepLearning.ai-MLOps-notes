@@ -252,5 +252,73 @@ Use the table to choose wich data you will use based on the data amount, cost, a
 - Don't increase data by more than 10x at a time, as it can make harder to predict how your model will behave. 
 
 ### Data pipeline
+
+Data pipelines refers to when your data has multiple steps of processing before its final output.
+
+#### Data pipeline example
+
+![data pipeline](figures/course1/week3/data_pipeline.png)
+
+One of the issues with you have scripts for data cleaning, one of the issues you run into is replicability when you take theses systems into production deployment.
+
+![data pipeline reproductibility](figures/course1/week3/data_pipeline_reproductibility.png)
+
+How to replicate the scripts to make sure the input distribution is the same for the development data and production data?
+
+#### POC and Production phases
+
+POC (proof-of-concept):
+- Goal is to decide if the application is workable and worth deploying
+- Focus on getting the prototype to work!
+- It's ok if data pre-processing is manual. But take extensive notes/comments.
+
+Production phase:
+- After project utility is established, use more sophisticsted tools to make sure the data pipaline is replicable
+- E.g.: Tensorflow Transform, Apache Beam, Airflow...
+
 ### Meta-data, data provenance and lineage
+
+For some applications, having and tracking metadata, data provenance, and data lineage can be a big help. 
+
+#### Data pipeline example
+
+Task: predict if someone is looking for a job (x = user data, y = looking for a job)
+
+![looking for a job prediction pipeline](figures/course1/week3/job_prediction.png)
+
+What if after months running this system you discover that the IP address blacklist has somes mistakes?
+
+Having built up this complex system, if you where to update your spam dataset, won't change your spam model, and the subsequent steps?
+
+It can be helpful to keep track of data provenance, as well as lineage.
+
+- **Data provenance:** where the data comes from?
+- **Data lineage:** sequence of steps needed to get to the end of the pipeline.
+
+Tools for keeping track of data provenance and lineage are still immature, so extensive documentation can help.
+
+#### Meta-data
+
+Meta-data is useful because it allows you to better investigate issues with your data.
+
+- **Manufacturing visual inspection:** time, factory, line #, camera settings, phone model, inspector ID...
+- **Speech recognition:** device type, labeler ID, VAD model ID...
+
+Useful for:
+- Error analysis: spotting unexpected effects.
+- Keeping track of data provenance.
+
 ### Balanced train/dev/test splits
+
+When your dataset is small, having a balanced train/dev/test set can significantly improve your ML development process.
+
+#### Balanced train/dev/test splits in small data problems
+
+**Visual inspection example:** 100 examples, 30 positive (defective).
+
+- Train/dev/test: 60% / 20% / 20%
+- Random split: 21 (35%) / 2 (10%)/ 7 (35%) positive examples (likely by random chance)
+- Want: 18 / 6 / 6 positive examples (30% each) - **balanced split**
+
+No need to worry with large datasets - a random split will be representative.
+
