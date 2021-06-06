@@ -322,3 +322,70 @@ When your dataset is small, having a balanced train/dev/test set can significant
 
 No need to worry with large datasets - a random split will be representative.
 
+## Scoping
+
+### Scoping
+
+Picking the right project to work on is one of the most rare and valuable schools in Ai today.
+
+![scoping](figures/course1/week3/scoping.png)
+
+Scoping example: ecommerce retailer looking to increase sales
+- Better recommender system
+- Better search
+- Improve catalog data
+- Inventory management
+- Price optimization
+
+Questions:
+- What project should we work on?
+- What are the metrics for success?  
+- What are the resources (data, time, people) needed?
+
+### Scoping process
+
+![scoping process](figures/course1/week3/scoping_process.png)
+
+#### Separating problem identification from solution
+
+| Problem (what to achieve) | Solution (how to achieve)    |
+| -------------------------:| ---------------------------: |
+| Increase conversion       | Search, recommendations      |
+| Reduce inventory          | Demand prediction, marketing |
+| Increase margin           | Optimizing what to sell      |
+
+### Diligence on feasibility and value
+
+How you can carry out this diligence step to figure out if a project really is feasible and also how valuable it really is. 
+
+#### Feasibility: is this project technically feasible?
+
+Use extenal benchmark (literature, other company, competitor).
+
+@[project feassibility](figures/course1/week3/project_feasibility.png)
+
+#### Why use HLP to benchmark
+
+People are very good on unstructured data tasks.
+
+**Criteria:** can a human, **given the same data*, perform the task?
+
+Example: in detecting scratches on smartphones, HLP can be measured by giving phones to people label as defective or not. However, if given the same data as the model (picture of the phone), even humans couldn't label correctly.
+
+#### Do we have features that are predictive?
+
+- Given past purchases, predict future purchases ✅
+- Given weather, predict shopping mall foot traffic ✅
+- Given DNA info, predict heart disease ❓
+- Given social media chatter, predict deand for a clothing style ❓
+- Given a history of a stock's price, predict future price of that stock ❌
+
+#### History of a project
+
+![history of a project](figures/course1/week3/project_history.png)
+
+The progress of a model's performance over time can give a idea of what may be reasonable/feasible for a project.
+
+### Diligence on value
+
+### Milestones and ressourcing
