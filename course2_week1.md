@@ -131,4 +131,63 @@ One person at the start of the line and another one recorded the time each passe
 
 ### Example Application: Suggesting Runs
 
+![Garbage In, Garbage Out](figures/course2/week1/suggesting_runs.png
+
+#### key considerations
+
+- Dataavailabiliity and collection
+    - What kind of/hohw much data is available
+    - How often does the new data come in:
+    - Is it annotated?
+        - If not, how hard/expensive is it to get it labeled?
+
+- Translate user needs into data needs
+    - Data needed
+    - Features needed
+    - Labels needed
+
+#### Example dataset
+
+![Garbage In, Garbage Out](figures/course2/week1/run_example.png)
+
+#### Get to know your data
+
+- Identify data sources
+- Check if they are refreshed
+- Consistency for values, units, and data types
+- Monitor outliers and errors
+
+#### Dataset issues
+
+- Inconsistent formatting
+    - Is zero "0", "0.0", or an indicator of a missing measurement
+- Compounding errors from other ML Models
+- Monitor data sources for system issues and outages
+
+#### Measure Data Effectiveness
+
+- Intuition about data value can be misleading
+    - Which features have predictive value and which ones do not?
+- Feature engineering helps to maximize the predictive signals
+- Feature selection helps to easure the predictive signals
+
+#### Translate User Needs Into Data Needs
+
+![Run example needs](figures/course2/week1/run_needs.png)
+
+Translate that into features
+
+![Run example features](figures/course2/week1/run_features.png)
+
+![Run example labels](figures/course2/week1/run_labels.png)
+
+#### Key points
+
+- Understand your user, translate their needs into data problems
+    - What kind of/how much data is available
+    - What are the details and issues of your data
+    - what are your predictive features
+    - What are the labels you are tracking
+    - What are your metrics
+    
 ### Responsible Data: Security, Privacy & Fairness
