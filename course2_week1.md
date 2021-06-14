@@ -189,5 +189,61 @@ Translate that into features
     - what are your predictive features
     - What are the labels you are tracking
     - What are your metrics
-    
-### Responsible Data: Security, Privacy & Fairness
+
+### Responsible Data: Security, Privacy and Fairness
+
+#### Example
+
+A classifier trained on Open Images dataset may not be able to label weddings traditions from different parts of the worlds.
+
+![Wedding example](figures/course2/week1/wedding_example.png)
+
+#### Source Data Responcibly
+
+![Wedding example](figures/course2/week1/data_sources.png)
+
+#### Data Security and Privacy
+
+- Data collection and management isn't just about your model
+    - Give user control o what data can be collected
+    - Is there a risk of inadvertently revealing user data?
+- Compliance with regulations and policies
+
+#### Users privacy
+
+- Protect personally identifiable information
+    - Aggregation: replace unique values with summary value
+    - Redaction: remove some data to create less complete picture
+
+#### How ML Systems Can Fail Users
+
+- Representational har
+- Opportunity denial
+- Disproportionate product failure
+- Harm by disadvantage
+
+#### Commit to Fairness
+
+- Make sure your models are fair
+    - Group fairness, equal accuracy
+- Bias in human labeled and/or collected data
+- ML Models can amplify biases
+
+#### Reducing bias: Design fair labeling systems
+
+- Accurate labels are necessary for supervised learning
+- Labeling can be done by:
+    - Automation (logging or weak supervision)
+- Humans (aka "Raters", often semi-supervised)
+
+#### Types of human raters
+
+![Human raters](figures/course2/week1/human_raters.png)
+
+#### Key points
+
+- Ensure rater pool dversity
+- Investigate rater context and incentives
+- Evaluate raterr tools
+- Manage cost
+- Determine freshness requirements
