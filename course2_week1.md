@@ -67,7 +67,7 @@ Accounts for:
 
 #### ML pipelines
 
-Infrastructure for automating, monitoring and maintaining model training and deployment.
+Infrastructure for automating, monitoring, and maintaining model training and deployment.
 
 ![Pipeline example](figures/course2/week1/pipeline_example.png)
 
@@ -83,7 +83,7 @@ Infrastructure for automating, monitoring and maintaining model training and dep
 
 #### TensorFlow Extended (TFX)
 
-End-to-end platform for deploying production ML pipelines.
+An end-to-end platform for deploying production ML pipelines.
 
 ![TFX components](figures/course2/week1/tfx_components.png)
 
@@ -93,19 +93,19 @@ End-to-end platform for deploying production ML pipelines.
 
 In production ML, you usually have to find ways to collect data.
 
-#### Example: predicting time spent on airport security checkpoint
+#### Example: predicting time spent on the airport security checkpoint
 
 ![Airport line example](figures/course2/week1/airport_line.png)
 
 One person at the start of the line and another one recorded the time each passenger entered or left the line. **Painful!**
 
-#### ML: Data is a First Class Citizen
+#### ML: Data is a First-Class Citizen
 
 -  Software 1.0
     - Explicit instructions to the compute
 - Software 2.0
     - Specify some goal on the behavior of a program
-    - Find solution using optimization techniques
+    - Find a solution using optimization techniques
     - Good data is key to success
     - Code in Software = Data in ML
 
@@ -126,8 +126,8 @@ One person at the start of the line and another one recorded the time each passe
 #### Key Points
 
 - Understand users, translate user needs into data problems
-- Ensue data coverage and high predictive signal
-- Source, store and monotor quality data responsibly
+- Ensure data coverage and high predictive signal
+- Source, store and monitor quality data responsibly
 
 ### Example Application: Suggesting Runs
 
@@ -135,8 +135,8 @@ One person at the start of the line and another one recorded the time each passe
 
 #### key considerations
 
-- Dataavailabiliity and collection
-    - What kind of/hohw much data is available
+- Data availability and collection
+    - What kind of/how much data is available
     - How often does the new data come in:
     - Is it annotated?
         - If not, how hard/expensive is it to get it labeled?
@@ -169,7 +169,7 @@ One person at the start of the line and another one recorded the time each passe
 - Intuition about data value can be misleading
     - Which features have predictive value and which ones do not?
 - Feature engineering helps to maximize the predictive signals
-- Feature selection helps to easure the predictive signals
+- Feature selection helps to measure the predictive signals
 
 #### Translate User Needs Into Data Needs
 
@@ -194,11 +194,11 @@ Translate that into features
 
 #### Example
 
-A classifier trained on Open Images dataset may not be able to label weddings traditions from different parts of the worlds.
+A classifier trained on Open Images dataset may not be able to label wedding traditions from different parts of the world.
 
 ![Wedding example](figures/course2/week1/wedding_example.png)
 
-#### Source Data Responcibly
+#### Source Data Responsibly
 
 ![Wedding example](figures/course2/week1/data_sources.png)
 
@@ -213,7 +213,7 @@ A classifier trained on Open Images dataset may not be able to label weddings tr
 
 - Protect personally identifiable information
     - Aggregation: replace unique values with summary value
-    - Redaction: remove some data to create less complete picture
+    - Redaction: remove some data to create a less complete picture
 
 #### How ML Systems Can Fail Users
 
@@ -226,7 +226,7 @@ A classifier trained on Open Images dataset may not be able to label weddings tr
 
 - Make sure your models are fair
     - Group fairness, equal accuracy
-- Bias in human labeled and/or collected data
+- Bias in human-labeled and/or collected data
 - ML Models can amplify biases
 
 #### Reducing bias: Design fair labeling systems
@@ -242,8 +242,8 @@ A classifier trained on Open Images dataset may not be able to label weddings tr
 
 #### Key points
 
-- Ensure rater pool dversity
+- Ensure rater pool diversity
 - Investigate rater context and incentives
-- Evaluate raterr tools
+- Evaluate rater tools
 - Manage cost
 - Determine freshness requirements
