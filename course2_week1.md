@@ -86,3 +86,49 @@ Infrastructure for automating, monitoring and maintaining model training and dep
 End-to-end platform for deploying production ML pipelines.
 
 ![TFX components](figures/course2/week1/tfx_components.png)
+
+## Collecting Data
+
+### Importance of Data
+
+In production ML, you usually have to find ways to collect data.
+
+#### Example: predicting time spent on airport security checkpoint
+
+![Airport line example](figures/course2/week1/airport_line.png)
+
+One person at the start of the line and another one recorded the time each passenger entered or left the line. **Painful!**
+
+#### ML: Data is a First Class Citizen
+
+-  Software 1.0
+    - Explicit instructions to the compute
+- Software 2.0
+    - Specify some goal on the behavior of a program
+    - Find solution using optimization techniques
+    - Good data is key to success
+    - Code in Software = Data in ML
+
+#### Everything starts with data
+
+![XKCD ML Comic](figures/course2/week1/xkcd_ml.png)
+
+- Models aren't magic
+- Meaningful data:
+    - Maximize predictive content
+    - Remove non-informative data
+    - Feature space coverage
+
+#### Garbage In, Garbage Out
+
+![Garbage In, Garbage Out](figures/course2/week1/garbage_in_out.png)
+
+#### Key Points
+
+- Understand users, translate user needs into data problems
+- Ensue data coverage and high predictive signal
+- Source, store and monotor quality data responsibly
+
+### Example Application: Suggesting Runs
+
+### Responsible Data: Security, Privacy & Fairness
