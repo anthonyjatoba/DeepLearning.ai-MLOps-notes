@@ -258,12 +258,12 @@ Data is always changing. If you trained a model a few years ago to recognize wha
 
 Your model predicts click-through rates (CTR), helping you decide how much inventory to order.
 
-**When suddenly** your AUC and prediction accuracy have dropped on men's dress shoes!
+**When suddenly** your AUC and prediction accuracy has dropped on men's dress shoes!
 
 - Why?
 - How do we even know that we have a problem?
 
-If you don't put good practices in place in the production setting, you're gonna find out when you order to many shoes or not enough shoes.
+If you don't put good practices in place in the production setting, you're gonna find out when you order too many shoes or not enough shoes.
 
 #### Case study: taking action
 
@@ -289,7 +289,7 @@ Kinds of problems:
 
 - Mispredictions do not have uniform **cost** to your business
 - The **data you have** is rarely the data you wish you had
-- Model objectve is nearly always a **proxy** for your business objectives
+- Model objective is nearly always a **proxy** for your business objectives
 - Some percentage of your customers may have a **bad experience**
 
 **The real world does not stand still**
@@ -344,7 +344,97 @@ Example: stock market applications.
 
 - Model performance decay over time
     - Data and Concept Drift
-- Model retraiining helps to improve performance
+- Model retraining helps to improve performance
     - Data labeling for changing ground truth and scarce labels
 
 ### Process Feedback and Human Labeling
+
+#### Data labeling
+
+Variety of Methods:
+- Process Feedback (direct labeling): e.g., actual vs predicted click-through
+- Human Labeling: e.g., cardiologists labeling MRI images
+- ~~Semi-Supervised Labeling~~
+- ~~Active Learning~~
+- ~~Weak Supervision~~
+
+We are not going to cover the last ones.
+
+#### Why is labeling important in production ML
+
+In many cases you need to perform supervised learning, therefore requiring labeled data.
+
+- Using business/organization available data
+- Frequent model retraining
+- Labeling ongoing and critical process
+- Creating a training dataset requires labels
+
+#### Direct labeling: continuous creation of training dataset
+
+Features are taken from the inference requests that your model is getting.
+
+![Direct labeling](figures/course2/week1/direct_labeling.png)
+
+Advantages
+- Training dataset continuous creation
+- Labels evolve quickly
+- Captures strong label signals
+
+Disadvantages
+- Hindered by inherent nature of the problem
+- Failure to capture ground truth
+- Largely bespoke design
+
+#### Process feedback - Open-Source log analysis tools
+
+**Logstash:** free and open source data processng pipeline
+- Ingests data from a multitude of sources
+- Transforms it
+- Sends it to your favorite "stash"
+
+**Fluentd**
+- Open source data collector
+- Unify the data collection and consumption
+
+#### Process feedback - Cloud log analytics
+
+**Google Cloud Logging**
+- Data and events from Google Cloud and AWS
+- BindPlane. Logging: application components, on-premise and hybrid cloud systems
+- Sends it to your favorite "stash"
+
+**AWS ElasticSearch**
+
+**Azure Monitor**
+
+#### Human labeling
+
+People ("raters") to exaine data and assign labels manually.
+
+![Direct labeling](figures/course2/week1/human_labeling.png)
+
+Methodology
+1. Unlabeled data is collected
+2. Human "raters" are recruited
+3. Instructions to guide raters are created
+4. Data is divided and assigned to raters
+5. Labels are collected and conflicts resolved
+
+Advantages
+- More labels
+- Pure supervised learning
+
+Disadvantages
+- Quality consistency: datasets dificult for human labeling
+- It can be slow
+- It can be expensive (specialists)
+- Small dataset curation
+
+![Direct labeling](figures/course2/week1/human_labeling_disadvantages.png)
+
+#### Key points
+
+- Various emthods of data labeling
+    - Process feedback
+    - Human labeling
+- Advantages and disadvantages of both

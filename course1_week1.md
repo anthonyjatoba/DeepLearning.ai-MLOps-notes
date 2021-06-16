@@ -1,4 +1,4 @@
-# Week 1: Overview of the ML Lifecycle and Deployment 
+# Course 1 Week 1: Overview of the ML Lifecycle and Deployment 
 
 ## The Machine Learning Project Lifecycle
 

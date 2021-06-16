@@ -1,4 +1,4 @@
-# Week 2: Model overview
+# Course 1 Week 2: Model overview
 
 ## Selecting and Training a Model
 
