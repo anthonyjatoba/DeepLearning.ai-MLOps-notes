@@ -7,3 +7,7 @@ My personal notes on the DeepLearning.AI MLOps course.
 - [Week 1: Overview of the ML Lifecycle and Deployment](course1_week1.md)
 - [Week 2: Select and Train a Model](course1_week2.md)
 - [Week 3: Data Definition and Baseline](course1_week3.md)
+
+## Course 2 - Machine Learning Data Lifecycle in Production
+
+- [Week 1: Collecting, Labeling and Validating Data](course2_week1.md)

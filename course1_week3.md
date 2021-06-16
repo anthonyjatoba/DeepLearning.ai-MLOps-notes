@@ -1,4 +1,4 @@
-# Data Definition and Baseline
+# Course 1 Week 3: Data Definition and Baseline
 
 ## Define Data and Establish Baseline 
 

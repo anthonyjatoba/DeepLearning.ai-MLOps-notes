@@ -67,7 +67,7 @@ Accounts for:
 
 #### ML pipelines
 
-Infrastructure for automating, monitoring and maintaining model training and deployment.
+Infrastructure for automating, monitoring, and maintaining model training and deployment.
 
 ![Pipeline example](figures/course2/week1/pipeline_example.png)
 
@@ -83,7 +83,7 @@ Infrastructure for automating, monitoring and maintaining model training and dep
 
 #### TensorFlow Extended (TFX)
 
-End-to-end platform for deploying production ML pipelines.
+An end-to-end platform for deploying production ML pipelines.
 
 ![TFX components](figures/course2/week1/tfx_components.png)
 
@@ -93,19 +93,19 @@ End-to-end platform for deploying production ML pipelines.
 
 In production ML, you usually have to find ways to collect data.
 
-#### Example: predicting time spent on airport security checkpoint
+#### Example: predicting time spent on the airport security checkpoint
 
 ![Airport line example](figures/course2/week1/airport_line.png)
 
 One person at the start of the line and another one recorded the time each passenger entered or left the line. **Painful!**
 
-#### ML: Data is a First Class Citizen
+#### ML: Data is a First-Class Citizen
 
 -  Software 1.0
     - Explicit instructions to the compute
 - Software 2.0
     - Specify some goal on the behavior of a program
-    - Find solution using optimization techniques
+    - Find a solution using optimization techniques
     - Good data is key to success
     - Code in Software = Data in ML
 
@@ -126,8 +126,8 @@ One person at the start of the line and another one recorded the time each passe
 #### Key Points
 
 - Understand users, translate user needs into data problems
-- Ensue data coverage and high predictive signal
-- Source, store and monotor quality data responsibly
+- Ensure data coverage and high predictive signal
+- Source, store and monitor quality data responsibly
 
 ### Example Application: Suggesting Runs
 
@@ -135,8 +135,8 @@ One person at the start of the line and another one recorded the time each passe
 
 #### key considerations
 
-- Dataavailabiliity and collection
-    - What kind of/hohw much data is available
+- Data availability and collection
+    - What kind of/how much data is available
     - How often does the new data come in:
     - Is it annotated?
         - If not, how hard/expensive is it to get it labeled?
@@ -169,7 +169,7 @@ One person at the start of the line and another one recorded the time each passe
 - Intuition about data value can be misleading
     - Which features have predictive value and which ones do not?
 - Feature engineering helps to maximize the predictive signals
-- Feature selection helps to easure the predictive signals
+- Feature selection helps to measure the predictive signals
 
 #### Translate User Needs Into Data Needs
 
@@ -189,5 +189,252 @@ Translate that into features
     - what are your predictive features
     - What are the labels you are tracking
     - What are your metrics
-    
-### Responsible Data: Security, Privacy & Fairness
+
+### Responsible Data: Security, Privacy and Fairness
+
+#### Example
+
+A classifier trained on Open Images dataset may not be able to label wedding traditions from different parts of the world.
+
+![Wedding example](figures/course2/week1/wedding_example.png)
+
+#### Source Data Responsibly
+
+![Wedding example](figures/course2/week1/data_sources.png)
+
+#### Data Security and Privacy
+
+- Data collection and management isn't just about your model
+    - Give user control o what data can be collected
+    - Is there a risk of inadvertently revealing user data?
+- Compliance with regulations and policies
+
+#### Users privacy
+
+- Protect personally identifiable information
+    - Aggregation: replace unique values with summary value
+    - Redaction: remove some data to create a less complete picture
+
+#### How ML Systems Can Fail Users
+
+- Representational har
+- Opportunity denial
+- Disproportionate product failure
+- Harm by disadvantage
+
+#### Commit to Fairness
+
+- Make sure your models are fair
+    - Group fairness, equal accuracy
+- Bias in human-labeled and/or collected data
+- ML Models can amplify biases
+
+#### Reducing bias: Design fair labeling systems
+
+- Accurate labels are necessary for supervised learning
+- Labeling can be done by:
+    - Automation (logging or weak supervision)
+- Humans (aka "Raters", often semi-supervised)
+
+#### Types of human raters
+
+![Human raters](figures/course2/week1/human_raters.png)
+
+#### Key points
+
+- Ensure rater pool diversity
+- Investigate rater context and incentives
+- Evaluate rater tools
+- Manage cost
+- Determine freshness requirements
+
+## Labeling Data
+
+Data is always changing. If you trained a model a few years ago to recognize what a book looks like, it would only consider paper books. If you trained the same model nowadays, you would also want to include ebooks.
+
+### Case Study: Degraded Model Performance
+
+#### You're on an Online Retailer Selling Shoes
+
+Your model predicts click-through rates (CTR), helping you decide how much inventory to order.
+
+**When suddenly** your AUC and prediction accuracy has dropped on men's dress shoes!
+
+- Why?
+- How do we even know that we have a problem?
+
+If you don't put good practices in place in the production setting, you're gonna find out when you order too many shoes or not enough shoes.
+
+#### Case study: taking action
+
+- How to detect problems early on?
+- What are the possible causes?
+- What can be done to solve these?
+
+#### What causes problems?
+
+Kinds of problems:
+- Slow problems: e.g., drift
+- Fast problems: e.g., bad sensors, bad software update
+
+#### Gradual problems
+
+![Gradual problems](figures/course2/week1/gradual_problems.png)
+
+#### Sudden problems
+
+![Sudden problems](figures/course2/week1/sudden_problems.png)
+
+#### Why "understand" the model?
+
+- Mispredictions do not have uniform **cost** to your business
+- The **data you have** is rarely the data you wish you had
+- Model objective is nearly always a **proxy** for your business objectives
+- Some percentage of your customers may have a **bad experience**
+
+**The real world does not stand still**
+
+### Data and Concept Change in Production ML
+
+#### Detecting problems with deployed models
+
+- Data and scope change
+- Monitor models and validate data to find problems early
+- Changing ground truth: **label** new training data
+
+#### Easy problems
+
+Example: classifying cats and dogs in pictures.
+
+- Ground truth changes slowly (month, years)
+- Model retraining driven by:
+    - Model improvements, better data
+    - Changes in software and/or systems
+- Labeling
+    - Curated datasets
+    - Crowd-based
+
+#### Harder problems
+
+Example: fashion/style applications.
+
+- Ground truth changes fast (weeks)
+- Model retraining driven by:
+    - **Declining model performance**
+    - Model improvements, better data
+    - Changes in software and/or systems
+- Labeling
+    - Direct feedback
+    - Crowd-based
+
+#### Really hard problems
+
+Example: stock market applications.
+
+- Ground truth changes very fast (days, hours, min)
+- Model retraining driven by:
+    - **Declining model performance**
+    - Model improvements, better data
+    - Changes in software and/or systems
+- Labeling
+    - Direct feedback
+    - Weak supervision
+
+#### Key points
+
+- Model performance decay over time
+    - Data and Concept Drift
+- Model retraining helps to improve performance
+    - Data labeling for changing ground truth and scarce labels
+
+### Process Feedback and Human Labeling
+
+#### Data labeling
+
+Variety of Methods:
+- Process Feedback (direct labeling): e.g., actual vs predicted click-through
+- Human Labeling: e.g., cardiologists labeling MRI images
+- ~~Semi-Supervised Labeling~~
+- ~~Active Learning~~
+- ~~Weak Supervision~~
+
+We are not going to cover the last ones.
+
+#### Why is labeling important in production ML
+
+In many cases you need to perform supervised learning, therefore requiring labeled data.
+
+- Using business/organization available data
+- Frequent model retraining
+- Labeling ongoing and critical process
+- Creating a training dataset requires labels
+
+#### Direct labeling: continuous creation of training dataset
+
+Features are taken from the inference requests that your model is getting.
+
+![Direct labeling](figures/course2/week1/direct_labeling.png)
+
+Advantages
+- Training dataset continuous creation
+- Labels evolve quickly
+- Captures strong label signals
+
+Disadvantages
+- Hindered by the inherent nature of the problem
+- Failure to capture ground truth
+- Largely bespoke design
+
+#### Process feedback - Open-Source log analysis tools
+
+**Logstash:** free and open-source data processing pipeline
+- Ingests data from a multitude of sources
+- Transforms it
+- Sends it to your favorite "stash"
+
+**Fluentd**
+- Open-source data collector
+- Unify the data collection and consumption
+
+#### Process feedback - Cloud log analytics
+
+**Google Cloud Logging**
+- Data and events from Google Cloud and AWS
+- BindPlane. Logging: application components, on-premise, and hybrid cloud systems
+- Sends it to your favorite "stash"
+
+**AWS ElasticSearch**
+
+**Azure Monitor**
+
+#### Human labeling
+
+People ("raters") to examine data and assign labels manually.
+
+![Direct labeling](figures/course2/week1/human_labeling.png)
+
+Methodology
+1. Unlabeled data is collected
+2. Human "raters" are recruited
+3. Instructions to guide raters are created
+4. Data is divided and assigned to raters
+5. Labels are collected and conflicts resolved
+
+Advantages
+- More labels
+- Pure supervised learning
+
+Disadvantages
+- Quality consistency: datasets difficult for human labeling
+- It can be slow
+- It can be expensive (specialists)
+- Small dataset curation
+
+![Direct labeling](figures/course2/week1/human_labeling_disadvantages.png)
+
+#### Key points
+
+- Various methods of data labeling
+    - Process feedback
+    - Human labeling
+- Advantages and disadvantages of both
