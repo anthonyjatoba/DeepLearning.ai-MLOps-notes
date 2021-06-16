@@ -381,26 +381,26 @@ Advantages
 - Captures strong label signals
 
 Disadvantages
-- Hindered by inherent nature of the problem
+- Hindered by the inherent nature of the problem
 - Failure to capture ground truth
 - Largely bespoke design
 
 #### Process feedback - Open-Source log analysis tools
 
-**Logstash:** free and open source data processng pipeline
+**Logstash:** free and open-source data processing pipeline
 - Ingests data from a multitude of sources
 - Transforms it
 - Sends it to your favorite "stash"
 
 **Fluentd**
-- Open source data collector
+- Open-source data collector
 - Unify the data collection and consumption
 
 #### Process feedback - Cloud log analytics
 
 **Google Cloud Logging**
 - Data and events from Google Cloud and AWS
-- BindPlane. Logging: application components, on-premise and hybrid cloud systems
+- BindPlane. Logging: application components, on-premise, and hybrid cloud systems
 - Sends it to your favorite "stash"
 
 **AWS ElasticSearch**
@@ -409,7 +409,7 @@ Disadvantages
 
 #### Human labeling
 
-People ("raters") to exaine data and assign labels manually.
+People ("raters") to examine data and assign labels manually.
 
 ![Direct labeling](figures/course2/week1/human_labeling.png)
 
@@ -425,7 +425,7 @@ Advantages
 - Pure supervised learning
 
 Disadvantages
-- Quality consistency: datasets dificult for human labeling
+- Quality consistency: datasets difficult for human labeling
 - It can be slow
 - It can be expensive (specialists)
 - Small dataset curation
@@ -434,7 +434,7 @@ Disadvantages
 
 #### Key points
 
-- Various emthods of data labeling
+- Various methods of data labeling
     - Process feedback
     - Human labeling
 - Advantages and disadvantages of both
