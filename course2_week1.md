@@ -247,3 +247,104 @@ A classifier trained on Open Images dataset may not be able to label wedding tra
 - Evaluate rater tools
 - Manage cost
 - Determine freshness requirements
+
+## Labeling Data
+
+Data is always changing. If you trained a model a few years ago to recognize what a book looks like, it would only consider paper books. If you trained the same model nowadays, you would also want to include ebooks.
+
+### Case Study: Degraded Model Performance
+
+#### You're on an Online Retailer Selling Shoes
+
+Your model predicts click-through rates (CTR), helping you decide how much inventory to order.
+
+**When suddenly** your AUC and prediction accuracy have dropped on men's dress shoes!
+
+- Why?
+- How do we even know that we have a problem?
+
+If you don't put good practices in place in the production setting, you're gonna find out when you order to many shoes or not enough shoes.
+
+#### Case study: taking action
+
+- How to detect problems early on?
+- What are the possible causes?
+- What can be done to solve these?
+
+#### What causes problems?
+
+Kinds of problems:
+- Slow problems: e.g., drift
+- Fast problems: e.g., bad sensors, bad software update
+
+#### Gradual problems
+
+![Gradual problems](figures/course2/week1/gradual_problems.png)
+
+#### Sudden problems
+
+![Sudden problems](figures/course2/week1/sudden_problems.png)
+
+#### Why "understand" the model?
+
+- Mispredictions do not have uniform **cost** to your business
+- The **data you have** is rarely the data you wish you had
+- Model objectve is nearly always a **proxy** for your business objectives
+- Some percentage of your customers may have a **bad experience**
+
+**The real world does not stand still**
+
+### Data and Concept Change in Production ML
+
+#### Detecting problems with deployed models
+
+- Data and scope change
+- Monitor models and validate data to find problems early
+- Changing ground truth: **label** new training data
+
+#### Easy problems
+
+Example: classifying cats and dogs in pictures.
+
+- Ground truth changes slowly (month, years)
+- Model retraining driven by:
+    - Model improvements, better data
+    - Changes in software and/or systems
+- Labeling
+    - Curated datasets
+    - Crowd-based
+
+#### Harder problems
+
+Example: fashion/style applications.
+
+- Ground truth changes fast (weeks)
+- Model retraining driven by:
+    - **Declining model performance**
+    - Model improvements, better data
+    - Changes in software and/or systems
+- Labeling
+    - Direct feedback
+    - Crowd-based
+
+#### Really hard problems
+
+Example: stock market applications.
+
+- Ground truth changes very fast (days, hours, min)
+- Model retraining driven by:
+    - **Declining model performance**
+    - Model improvements, better data
+    - Changes in software and/or systems
+- Labeling
+    - Direct feedback
+    - Weak supervision
+
+#### Key points
+
+- Model performance decay over time
+    - Data and Concept Drift
+- Model retraiining helps to improve performance
+    - Data labeling for changing ground truth and scarce labels
+
+### Process Feedback and Human Labeling
