@@ -438,3 +438,59 @@ Disadvantages
     - Process feedback
     - Human labeling
 - Advantages and disadvantages of both
+
+## Validating Data
+
+Gargabe In, garbage out. You can have a lot of data, but if your data is not good, it is not good for ML either. How do you know data is good or isn't good?
+
+### Detecting Data Issues
+
+#### Drift and skew
+
+- **Drift:** changes in data over time, such as data collected once a day.
+- **Skew:* difference between two static versions, or different sources, such as training set and serving set
+
+#### Typical ML pipeline
+
+In a typical ML pipeline you have different sources of data, but over time they will change, so your model performance can drop quickly.
+
+![Direct labeling](figures/course2/week1/typical_ml_pipeline.png)
+
+#### Model Decay: Data Drift
+
+Over time a ML model start to perform poorly in many cases, and we call that model decay. Usually, is called by drift, that are changes in the statistical properties of features, often caused by seasonality, trends, or in general changes in the world. 
+
+![Model Decay - Data drift](figures/course2/week1/data_drift.png)
+
+In the example above, the app classifies a user as a spammer if he sends 20 or more messages a day. After a system update, both spammer and non-spammer started to send more messages, classifying every user as a spammer.
+
+#### Performance Decay: Concept Drift
+
+Concept drift is a change in the statistical properties of your label. 
+
+![Performance Decay - Concept drift](figures/course2/week1/concept_drift.png)
+
+#### Detecting Data Issues
+
+- Detecting schema skew
+  - Training and serving data do not conform to the same schema
+  
+- Detecting distribution skew
+  - Dataset shift -> covariate or concept shift
+  
+- Requires continuous evaluation
+
+#### Detecting Distribuction skew
+
+- **Dataset shift:** when the joint probability of x and y is not the same during training and serving 
+- **Covariate shift:** the change of distribution of the input (x) variables present in train and serving data, but the conditional distribution remains unchanged.
+- **Concept shift:** a change in the relationship between the input (x) and output (y) variables.
+
+![Detecting Distribuction skew](figures/course2/week1/shift_definition.png)
+
+#### Skew detection workflow
+
+![Skew detection workflow](figures/course2/week1/skew_detection_workflow.png)
+
+### TensorFlow Data Validation
+
