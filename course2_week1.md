@@ -494,3 +494,51 @@ Concept drift is a change in the statistical properties of your label.
 
 ### TensorFlow Data Validation
 
+- Understand, validate, and monitor ML data at scale
+- Used to analyze and validate petabytes of data at Google every day
+- Proven track record in helping TFX users maintain the health of their ML pipelines
+
+#### TFDV capabilities
+
+- Generates data statistics and browser visualizations
+- Infers the data schema
+- Performs validity checks against schema
+- Detects training/serving skew
+
+#### Skew detection TFDV
+
+![Skew detection TFDV](figures/course2/week1/skew_detection_tfdv.png)
+
+#### Skew - TFDV
+
+- Supported for categorical features
+- Expressed in terms of L-infinity distance (Chebyshev distance)
+- Set a threshold to receive warnings
+
+![Skew detection TFDV](figures/course2/week1/skew_tfdv.png)
+
+#### Schema skew
+
+Serving and training data don't conform to same schema:
+- For example, int != float
+
+#### Feature skew
+
+Training **feature values** are different than the serving **feature values**:
+- Feature values are modified between training and serving time
+- Transformation applied only in one of the two instances
+
+#### Distribution skew
+
+**Distribution** of serving and training dataset is significantly different:
+- Faulty sampling method during training
+- Different data sources for training and serving data
+- Trend, seasonality, changes in data over time
+
+#### Key points
+
+- TFDV: Descriptive statistics at scale with the embedded facets visualizations
+- It provides insight into:
+  - What are the underlying statistics of your data
+  - How does your training, evaluation, and serving dataset statistics compare
+  - How can you detect and fix data anomalies
