@@ -441,7 +441,7 @@ Disadvantages
 
 ## Validating Data
 
-Gargabe In, garbage out. You can have a lot of data, but if your data is not good, it is not good for ML either. How do you know data is good or isn't good?
+Garbage In, garbage out. You can have a lot of data, but if your data is not good, it is not good for ML either. How do you know data is good or isn't good?
 
 ### Detecting Data Issues
 
@@ -452,13 +452,13 @@ Gargabe In, garbage out. You can have a lot of data, but if your data is not goo
 
 #### Typical ML pipeline
 
-In a typical ML pipeline you have different sources of data, but over time they will change, so your model performance can drop quickly.
+In a typical ML pipeline, you have different sources of data, but over time they will change, so your model performance can drop quickly.
 
 ![Direct labeling](figures/course2/week1/typical_ml_pipeline.png)
 
 #### Model Decay: Data Drift
 
-Over time a ML model start to perform poorly in many cases, and we call that model decay. Usually, is called by drift, that are changes in the statistical properties of features, often caused by seasonality, trends, or in general changes in the world. 
+Over time a ML model starts to perform poorly in many cases, and we call that model decay. Usually, is called drift, which is changes in the statistical properties of features, often caused by seasonality, trends, or in general changes in the world. 
 
 ![Model Decay - Data drift](figures/course2/week1/data_drift.png)
 
@@ -502,7 +502,7 @@ Concept drift is a change in the statistical properties of your label.
 
 - Generates data statistics and browser visualizations
 - Infers the data schema
-- Performs validity checks against schema
+- Performs validity checks against the schema
 - Detects training/serving skew
 
 #### Skew detection TFDV
@@ -519,7 +519,7 @@ Concept drift is a change in the statistical properties of your label.
 
 #### Schema skew
 
-Serving and training data don't conform to same schema:
+Serving and training data don't conform to the same schema:
 - For example, int != float
 
 #### Feature skew
