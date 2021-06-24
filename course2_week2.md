@@ -67,4 +67,71 @@ You also know something about your data or working with data.
 
 ### Feature Engineering Techniques
 
+#### Feature Engineering Techniques
+
+Numerical range:
+- Scaling
+- Normalizing
+- Standardazing
+
+Grouping
+- Bucketizing
+- Bag of words
+
+Very dependent on the particular algorithm you are going to use.
+
+#### Scaling
+
+- Converts values from their natural range into a prescribed range
+    - E.g. grayscale image pixel iintensity scale is [0, 255] usually rescaled to [-1, 1]
+- Benefits
+    - Helps neural nets converge faster
+    - Do away with NaN errors during training
+    - For each feature the model learns the right weights
+
+#### Normalization
+
+Useful if you don't know if the distribution of your data is gaussian.
+
+![Normalization](figures/course2/week2/normalization.png)
+
+#### Standardization (z-score)
+
+- Z-score relates the number of standard deviations away from the mean
+
+![Standardization](figures/course2/week2/standardization.png)
+
+Try both normalization and standardization and compare the results.
+
+#### Bucketizing/Binning
+
+![Binning](figures/course2/week2/binning.png)
+
+#### Other techniques
+
+Dimensionality reduction in embeddings
+- Principal component analysis (PCA)
+- t-distributed stochastic neighbbor embedding (t-SNE)
+- Uniform manifold approximation and projection (UMAP)
+
+Featuring crossing
+
+#### TensorFlow embedding projector
+
+- Intuitive exploration of high-dimensional data
+- Visualize and analyze
+- Techniques
+    - PCA
+    - t-SNE
+    - UMAP
+    - Custom linear projections
+- Ready to play
+
+#### Key points
+
+- Feature engineering:
+    - Prepares, tunes, transforms, extracts and constructs features
+- Feature engineering is key for model refinement
+- Feature engineering helps with ML analysis
+
 ### Feature Crosses
